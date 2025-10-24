@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寝室を、世界最高峰のホテルスイートへ。| エムズシステム 波動スピーカー</title>
+    <!-- Google Fonts for elevated luxury look -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300;400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#373a4b', // Deep Slate/Navy (より深く)
+                        'secondary': '#7d7a8d', // Muted Gray
+                        'accent': '#c2b078', // New: Champagne Gold Accent
+                        'bg-light': '#fefefe', // Pure White for crispness
+                        'bg-dark': '#24242e', // Near-Black for contrast
+                        'logo-bg-light': '#f5f5f5', // NEW: Very Light Gray for Logo background
+                    },
+                    fontFamily: {
+                        // New: Cormorant Infant for luxury headlines
+                        serif: ['Cormorant Infant', 'serif'], 
+                        // New: Montserrat for clean, modern body text
+                        sans: ['Montserrat', 'Noto Sans JP', 'sans-serif'], 
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('main01.jpg')", 
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for a polished look */
+        .luxury-shadow {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* 影をより深く */
+        }
+        .text-shadow-light {
+             text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); /* 影を濃くして、写真とのコントラストを強化 */
+        }
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, #fefefe, #c2b078, #fefefe);
+        }
+        /* ヘッダー固定時の調整を修正: bodyのパディングを削除 */
+        body {
+            padding-top: 0; /* 白い隙間をなくすためパディングを0に戻す */
+        }
+        
+        /* 【修正点②】カード内のテキストはみ出し防止：モバイルでは折り返す */
+        /* mdサイズ以上の画面でのみ、一行表示を維持するためのCSSを適用 */
+        @media (min-width: 768px) {
+            .no-wrap-text {
+                white-space: nowrap;
+                /* 導入論拠の文字を少しだけ小さくし、一行に収まる確率を高める */
+                font-size: 0.9rem; 
+            }
+        }
+        
+        /* モバイルでの比較表のフォントサイズを微調整 */
+        .compare-table td, .compare-table th {
+            font-size: 0.8rem; /* 小さめのフォント */
+            padding: 0.75rem 1rem; /* パディングを調整 */
+        }
+        .compare-table tbody td {
+             font-size: 0.9rem;
+        }
+
+        /* 科学的検証表のスタイル */
+        .evidence-table th, .evidence-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .evidence-table th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body class="bg-bg-light font-sans text-primary">
+
+    <!-- ナビゲーションバー (元のデザイン構成に戻す) -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm shadow-xl">
+        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+            
+            <!-- 【左側】元のカラーのエムズシステム ロゴ画像 -->
+            <a href="#">
+                <img src="logotype.png" alt="M's System Logo" class="h-10 md:h-12 object-contain" style="height: 48px; width: auto;"> <!-- ロゴを少し大きく表示 -->
+            </a>
+            
+            <!-- 【右側】コンセプトテキストとCTAボタン -->
+            <div class="flex items-center space-x-4">
+                <!-- コンセプトテキスト -->
+                <div class="text-right leading-none hidden sm:block">
+                    <p class="font-serif text-lg text-white font-light tracking-widest">
+                        Personal Sanctuary
+                    </p>
+                    <p class="text-xs text-accent tracking-widest uppercase mt-0.5">
+                        BEDROOM AUDIO SYSTEM
+                    </p>
+                </div>
+                
+                <!-- CTAボタン -->
+                <div class="flex items-center space-x-2">
+                    <!-- デモ予約ボタン -->
+                    <a href="#demo-form" class="px-3 py-1 text-xs sm:text-sm font-semibold bg-accent text-primary rounded-full transition duration-300 transform hover:scale-105 luxury-shadow uppercase tracking-wider whitespace-nowrap">
+                        デモ予約
+                    </a>
+                    <!-- 購入するボタン -->
+                    <a href="#purchase-form" class="px-3 py-1 text-xs sm:text-sm font-semibold bg-primary text-accent rounded-full transition duration-300 transform hover:scale-105 luxury-shadow uppercase tracking-wider border border-accent whitespace-nowrap">
+                        購入する
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- 1. ファーストビュー (FV: 最初に目にする画面) -->
+    <!-- 【修正点】モバイルでの背景画像位置を「bg-[40%_75%]」（中央より左・下寄り）に調整 -->
+    <header class="relative h-screen bg-hero-pattern bg-cover bg-[40%_75%] sm:bg-[center_40%] flex items-center justify-center pt-20"> 
+        <!-- Overlay for better text readability -->
+        <!-- オーバーレイの透明度を40%に下げ、画像を明るくする -->
+        <div class="absolute inset-0 bg-black opacity-40"></div> 
+        
+        <div class="relative text-center text-white p-4 md:p-12 max-w-4xl mx-auto">
+            <!-- メインコピーの文字サイズをモバイルで調整 (text-6xl) -->
+            <h1 class="font-serif text-5xl sm:text-7xl lg:text-7xl font-light leading-tight mb-4 text-shadow-light tracking-wider">
+                寝室を、<br>
+                世界最高峰の<br>
+                ホテルスイートへ。
+            </h1>
+            <!-- サブコピーの文字サイズをモバイルで調整 (text-xl) -->
+            <p class="text-lg sm:text-2xl font-light mb-8 max-w-3xl mx-auto text-shadow-light font-sans">
+                最高級のベッドがもたらす「身体の休息」を、<br>
+                「聴覚的な安らぎ」で完璧に補完する、プロが選んだ音響インフラ。
+            </p>
+
+            <!-- 信頼の裏付け（権威性）の文言と事例を更新 (ホテルニューオータニに変更) -->
+            <div class="mb-12 p-3 sm:p-4 bg-black/30 rounded-xl backdrop-blur-sm inline-block luxury-shadow border border-accent/50">
+                <p class="text-sm sm:text-lg font-medium text-white tracking-widest">
+                    <span class="text-accent font-bold">信頼の証:</span> 帝国ホテル、パレスホテル、ホテルニューオータニなど、超一流ホテルが究極のおもてなしのために採用した品質を、あなたの自宅へ。
+                </p>
+            </div>
+
+            <!-- CTAボタンを2つに分割（モバイルで縦に並ぶように調整） -->
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#demo-form" class="inline-block px-8 py-4 text-lg font-bold bg-accent text-primary rounded-full transition duration-300 transform hover:scale-105 luxury-shadow uppercase tracking-wider border-2 border-accent hover:border-white">
+                    ２週間のデモ体験を申し込む
+                </a>
+                <a href="#purchase-form" class="inline-block px-8 py-4 text-lg font-bold bg-primary text-accent rounded-full transition duration-300 transform hover:scale-105 luxury-shadow uppercase tracking-wider border-2 border-accent">
+                    今すぐ購入する
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. ターゲットの課題提起とソリューション -->
+    <section class="py-16 md:py-28 bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-2xl sm:text-4xl font-serif text-center mb-12 sm:mb-16 font-light text-primary tracking-widest">
+                究極の休息に必要なのは、<br class="sm:hidden">静寂だけでなく「心の安寧」です
+            </h2>
+            <!-- 文言を修正 -->
+            <p class="text-base sm:text-lg text-center mb-10 sm:mb-16 max-w-3xl mx-auto text-gray-700">
+                日々の最高のパフォーマンスを追求される方々は、「最高の睡眠環境」に投資しています。
+            </p>
+            <!-- 無音に関する新しい気づきの文章を追加 -->
+            <p class="text-base sm:text-lg text-center mb-10 sm:mb-16 max-w-3xl mx-auto text-gray-700">
+                多くの人は寝室に「無音の静寂」を求めます。しかし、本当の静寂とは、外部の小さなノイズや自身の心臓の音、わずかな環境音によって、かえって脳が覚醒してしまう状態かもしれません。波動スピーカーは、無音では到達できない「心地よい空間」を生み出し、脳の緊張を完全に解き放ちます。
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 sm:gap-12">
+                <!-- 「脳の緊張を解き放つ、自然な響き」に変更 -->
+                <div class="p-6 sm:p-10 rounded-2xl bg-bg-light luxury-shadow border-t-8 border-accent/80">
+                    <h3 class="text-xl sm:text-2xl font-serif font-semibold mb-3 flex items-center text-primary">
+                        <svg class="w-6 h-6 sm:w-7 sm:h-7 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        脳の緊張を解き放つ、自然な響き
+                    </h3>
+                    <p class="text-sm sm:text-lg text-gray-700">
+                        従来のスピーカーのように音が特定の場所から強く飛んでくると、脳が音源を特定しようとして疲れてしまいます（脳の疲れ）。波動スピーカーは、この脳の負担を劇的に減らし、脳を完全に「オフ」にする環境を提供します。
+                    </p>
+                </div>
+                <!-- パーソナル・サンクチュアリ (太字タグを削除) -->
+                <div class="p-6 sm:p-10 rounded-2xl bg-bg-light luxury-shadow border-t-8 border-accent/80">
+                    <h3 class="text-xl sm:text-2xl font-serif font-semibold mb-3 flex items-center text-primary">
+                         <svg class="w-6 h-6 sm:w-7 sm:h-7 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9-3 4.03-3 9 1.343 9 3 9z"></path></svg>
+                        パーソナル・サンクチュアリの完成
+                    </h3>
+                    <p class="text-sm sm:text-lg text-gray-700">
+                        高級ベッドが身体的な休息を提供するように、波動スピーカーは精神的な静謐（せいひつ：静かで穏やかなこと）を提供し、寝室を自分専用の聖域へと昇華させます。休息の質を最大化するための、最後のピースです。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 科学的検証のエビデンスセクション -->
+    <section class="py-16 md:py-20 bg-logo-bg-light">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-2xl sm:text-4xl font-serif text-center mb-8 font-light text-primary tracking-widest">
+                科学的検証による裏付け
+            </h2>
+            <p class="text-sm sm:text-base text-center mb-10 text-gray-700">
+                日本レジリエンス医学研究所での検証での抜粋
+            </p>
+            
+            <div class="overflow-x-auto luxury-shadow rounded-xl border border-gray-200 bg-white">
+                <table class="min-w-full border-collapse text-left evidence-table">
+                    <thead>
+                        <tr>
+                            <th class="w-1/4">項目</th>
+                            <th class="w-1/4">科学的検証結果（p値）</th>
+                            <th>ゲストの心身への貢献</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ネガティブ感情の軽減</td>
+                            <td>TMD（総合的気分状態）が p=0.01 で有意に低下。</td>
+                            <td class="text-sm">ゲストの緊張や不安といったネガティブな感情を和らげる傾向があります。</td>
+                        </tr>
+                        <tr>
+                            <td>ストレス/興奮の抑制</td>
+                            <td>交感神経活動の指標（LF）が p=0.02 で有意に低下。</td>
+                            <td class="text-sm">心身の緊張状態を和らげ、リラックス状態を誘導する可能性があります。</td>
+                        </tr>
+                        <tr>
+                            <td>リラックス促進傾向</td>
+                            <td>副交感神経活動の指標（HF）が p=0.06 で増加傾向。</td>
+                            <td class="text-sm">リラックスしているときに働く神経の活動が活発化する傾向が推測されます。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-4 text-xs text-center text-gray-500">
+                測定項目：客観的な自律神経指標（HRV）および感情プロフィール（POMS2）の測定
+            </p>
+        </div>
+    </section>
+
+    <div class="divider mx-auto max-w-4xl my-10 sm:my-16"></div>
+
+    <!-- 3. 波動スピーカーの核となる価値（従来のオーディオとの違い） -->
+    <section class="py-16 md:py-28 bg-bg-light">
+        <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
+            <!-- 文言を修正 -->
+            <h2 class="text-2xl sm:text-4xl font-serif text-center mb-10 sm:mb-16 font-light text-primary tracking-widest">
+                音を「鑑賞」するのではなく、<br>「空間と調和させる」という新常識
+            </h2>
+            <!-- 文言を修正 -->
+            <p class="text-center text-base sm:text-xl mb-8 sm:mb-12 text-gray-600">
+                「最高の睡眠」に求められるのは、技術的な主張ではなく、空間の静寂と美しさを乱さない調和です。
+            </p>
+
+            <!-- 比較表 (モバイルでは横スクロールで対応) -->
+            <div class="overflow-x-auto luxury-shadow rounded-xl border border-gray-200">
+                <table class="min-w-full bg-white border-collapse compare-table">
+                    <thead>
+                        <tr class="bg-primary text-white text-left uppercase tracking-wider">
+                            <th class="py-3 px-4 border-r border-gray-700">比較軸</th>
+                            <th class="py-3 px-4 border-r border-gray-700">従来のハイエンドオーディオ</th>
+                            <th class="py-3 px-4 bg-accent text-primary rounded-tr-xl">エムズシステム 波動スピーカー</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 1. 音の性質 - 無指向性 -->
+                        <tr class="border-t border-gray-200">
+                            <td class="py-4 px-4 font-semibold whitespace-nowrap">音の性質</td>
+                            <td class="py-4 px-4 text-gray-700">指向性（音が特定の方向に集中する）を重視。</td>
+                            <td class="py-4 px-4 text-primary font-bold bg-amber-50">
+                                無指向性<br>
+                                <span class="text-xs font-normal text-gray-600">（音が特定の方向に限定されず、均一に拡散する）</span>
+                            </td>
+                        </tr>
+                        <!-- 2. 体験の質 -->
+                        <tr class="border-t border-gray-200 bg-gray-50">
+                            <td class="py-4 px-4 font-semibold whitespace-nowrap">体験の質</td>
+                            <td class="py-4 px-4 text-gray-700">「最適なリスニングポジション（聞く場所）」を強いる。</td>
+                            <td class="py-4 px-4 text-primary font-bold bg-amber-50">
+                                どこにいても音質が変化しない<br>
+                                <span class="text-xs font-normal text-gray-600">（読書や横になるなど、どの姿勢でも最適な音響体験）</span>
+                            </td>
+                        </tr>
+                        <!-- 3. 空間調和 -->
+                        <tr class="border-t border-gray-200">
+                            <td class="py-4 px-4 font-semibold whitespace-nowrap">空間調和</td>
+                            <td class="py-4 px-4 text-gray-700">技術的な見た目で、配線が煩雑になりがち。</td>
+                            <td class="py-4 px-4 text-primary font-bold bg-amber-50">
+                                デザイン的な主張を抑えた意匠性<br>
+                                <span class="text-xs font-normal text-gray-600">（配線もシンプルで、空間の美しさを乱さない）</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 4. 信頼性の証：プロが選んだ理由 -->
+    <section class="py-16 md:py-28 bg-logo-bg-light text-primary"> <!-- 背景色を明るいグレーに変更 -->
+        <!-- コンテナ幅を max-w-7xl に拡大 -->
+        <div class="container mx-auto px-6 max-w-7xl"> 
+            <!-- タイトルを変更 (テキスト色をprimaryに戻す) -->
+            <h2 class="text-2xl sm:text-4xl font-serif text-center mb-8 sm:mb-12 font-light text-primary tracking-widest">
+                確かな品質、プロフェッショナルな導入実績。
+            </h2>
+            
+            <!-- --- ホテルのロゴ画像エリア (背景を明るくし、ロゴを黒で表示) --- -->
+            <div class="flex justify-center items-center space-x-6 sm:space-x-12 mb-12 sm:mb-16 p-4 md:p-6 bg-white rounded-xl luxury-shadow border border-accent/30"> <!-- ロゴ背景をピュアホワイトに -->
+                <!-- ホテル1：帝国ホテル -->
+                <div class="w-1/4 max-w-[150px] opacity-90 hover:opacity-100 transition duration-300">
+                    <!-- max-heightを80pxに拡大 -->
+                    <img src="logo_teikoku.png" alt="帝国ホテル ロゴ" class="w-full h-auto object-contain" style="max-height: 80px;">
+                </div>
+                <!-- ホテル2：パレスホテル -->
+                <div class="w-1/4 max-w-[150px] opacity-90 hover:opacity-100 transition duration-300">
+                    <!-- max-heightを80pxに拡大 -->
+                    <img src="logo_palace.png" alt="パレスホテル ロゴ" class="w-full h-auto object-contain" style="max-height: 80px;">
+                </div>
+                <!-- ホテル3：ホテルニューオータニ -->
+                <div class="w-1/4 max-w-[150px] opacity-90 hover:opacity-100 transition duration-300">
+                    <!-- max-heightを80pxに拡大 -->
+                    <img src="logo_newotani.png" alt="ホテルニューオータニ ロゴ" class="w-full h-auto object-contain" style="max-height: 80px;">
+                </div>
+            </div>
+            <!-- --- /ホテルのロゴ画像エリア --- -->
+
+
+            <!-- 文言の改行を調整 -->
+            <p class="text-center text-base sm:text-xl mb-10 sm:mb-12 text-gray-700"> <!-- テキスト色をprimaryに変更 -->
+                最高の環境を追求するプロフェッショナルが認めた品質。<br class="hidden sm:inline">世界で最も基準が厳しい空間に選ばれた事実は、揺るぎない品質の証です。
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6 sm:gap-12">
+                <!-- グローバル・ラグジュアリー (背景を濃い色、文字を白に再設定) -->
+                <div class="p-6 sm:p-8 rounded-xl bg-primary/90 luxury-shadow border-l-4 border-accent text-white">
+                    <h3 class="text-xl sm:text-2xl font-serif font-semibold mb-2 text-accent flex items-center tracking-widest">
+                        <span class="text-2xl sm:text-3xl mr-3">💎</span>
+                        グローバル・ラグジュアリーホテル
+                    </h3>
+                    <!-- 導入論拠の文章を一行にまとめるように修正 (no-wrap-textクラス適用 & 短縮) -->
+                    <p class="text-sm sm:text-lg text-gray-200 no-wrap-text">
+                        <span class="font-bold">導入論拠：</span> 最高の顧客体験と安らぎの空間設計。
+                    </p>
+                    <p class="mt-2 text-xs sm:text-base text-gray-300">
+                        <span class="font-bold text-accent">真の価値を求める方への訴求：</span> 世界の超一流ホテルが、ゲストの究極の安らぎのために採用しました。これは、単なる音質を超えた「空間の質」への投資です。
+                    </p>
+                </div>
+                <!-- 日本の伝統的なおもてなし (背景を濃い色、文字を白に再設定) -->
+                <div class="p-6 sm:p-8 rounded-xl bg-primary/90 luxury-shadow border-l-4 border-accent text-white">
+                    <h3 class="text-xl sm:text-2xl font-serif font-semibold mb-2 text-accent flex items-center tracking-widest">
+                        <span class="text-2xl sm:text-3xl mr-3">🍵</span>
+                        日本の伝統的なおもてなし空間
+                    </h3>
+                    <!-- 導入論拠の文章を一行にまとめるように修正 (no-wrap-textクラス適用) -->
+                    <p class="text-sm sm:text-lg text-gray-200 no-wrap-text">
+                        <span class="font-bold">導入論拠：</span> 究極の「おもてなし」の実現と静謐な空間演出。
+                    </p>
+                    <p class="mt-2 text-xs sm:text-base text-gray-300">
+                        <span class="font-bold text-accent">真の価値を求める方への訴求：</span> 伝統的な上質さと現代のウェルネス技術を融合させた、確かな選択。静寂を重んじる日本文化の中で、心地よい調和をもたらします。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 5. クロージングと行動喚起 (CTA) -->
+    <section id="cta-section" class="py-16 md:py-28 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <!-- セクションタイトルはそのまま -->
+            <h2 class="text-2xl sm:text-4xl font-serif mb-6 sm:mb-8 text-primary font-light tracking-widest">
+                長期的な健康への投資
+            </h2>
+            <p class="text-base sm:text-xl mb-10 sm:mb-12 text-gray-600 font-light">
+                波動スピーカーは、単なる娯楽機器ではなく、「脳の疲労回復インフラ」としての長期的な健康への投資です。身体的な休息と精神的な静謐が調和し、日中の高い生産性を保証します。
+            </p>
+            
+            <!-- 特別訴求の文言を変更 -->
+            <div class="p-6 md:p-10 mb-10 sm:mb-12 border-4 border-accent bg-accent/10 rounded-xl luxury-shadow">
+                <p class="text-xl sm:text-2xl font-serif font-bold text-primary mb-3">
+                    【このサイトからご購入いただいたお客様へ特別に】
+                </p>
+                <!-- 差し替え後の新しい文章 -->
+                <p class="text-sm sm:text-lg text-gray-800 font-semibold mb-4">
+                    他にはない特別な快眠体験と、ご満足いただける確かな結果をお約束します。
+                </p>
+                
+                <!-- ぐっすりマットの画像を挿入 -->
+                <div class="my-4 sm:my-6">
+                    <img src="gussuri.png" alt="睡眠サポートマット ぐっすりマット" class="mx-auto w-full md:w-3/4 max-w-lg rounded-xl luxury-shadow object-cover border-2 border-accent/50">
+                </div>
+                
+                <!-- gussurimatを「ぐっすりマット」に変換して太字で強調 -->
+                <div class="inline-block p-3 bg-accent text-primary rounded-lg font-bold text-base sm:text-xl tracking-wider shadow-lg">
+                    特別パッケージとして、今なら睡眠サポートマット ぐっすりマットを無料進呈いたします。
+                </div>
+                <p class="text-xs sm:text-base text-gray-600 mt-4">
+                    「聴く」ことで心身を癒やし、「敷く」ことで良質な睡眠をサポート。究極の快眠アプローチで、ストレスから解放された深い眠りをお約束します。
+                </p>
+            </div>
+
+            <!-- 最終CTAボタンのエリア。 -->
+            <p class="text-xl sm:text-2xl font-serif font-bold text-primary mb-5 sm:mb-6">
+                究極の安らぎを、まずはご自宅でご体感ください。
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#demo-form" class="inline-block px-10 py-5 text-lg sm:text-xl font-extrabold bg-accent text-primary rounded-full transition duration-300 transform hover:scale-105 luxury-shadow uppercase tracking-widest border-2 border-accent hover:border-primary/50">
+                    ２週間のデモ体験を申し込む
+                </a>
+                <a href="#purchase-form" class="inline-block px-10 py-5 text-lg sm:text-xl font-extrabold bg-primary text-accent rounded-full transition duration-300 transform hover:scale-105 luxury-shadow uppercase tracking-widest border-2 border-accent">
+                    今すぐ購入する
+                </a>
+            </div>
+            
+            <p class="mt-6 text-sm text-gray-500">
+                お客様のプライバシーを厳守いたします。
+            </p>
+        </div>
+    </section>
+
+    <footer class="bg-primary py-10 text-center text-gray-400 text-sm">
+        <p class="tracking-widest">&copy; M's System. All Rights Reserved. | プライバシーポリシー</p>
+    </footer>
+
+</body>
+</html>
